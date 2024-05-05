@@ -35,31 +35,6 @@ public class Main {
 
         terr.comprarCasa();
 
-        /*if (Funcoes.validarCPF(j1.getCpf())){
-            System.out.println("Cpf do Jogador 1 é válido!");
-        }
-        else{
-            System.out.println("Cpf do Jogador 1 é inválido!");
-        }
-        if (Funcoes.validarEmail(j1.getEmail())){
-            System.out.println("Email do Jogador 1 é válido!");
-        }
-        else{
-            System.out.println("Email do Jogador 1 é inválido!");
-        }
-        if (Funcoes.validarCPF(j2.getCpf())){
-            System.out.println("Cpf do Jogador 2 é válido!");
-        }
-        else{
-            System.out.println("Cpf do Jogador 2 é inválido!");
-        }
-        if (Funcoes.validarEmail(j2.getEmail())){
-            System.out.println("Email do Jogador 2 é válido!");
-        }
-        else{
-            System.out.println("Email do Jogador 2 é inválido!");
-        }*/
-
         Scanner scanner = new Scanner(System.in);
         while (true){
             System.out.println("Deseja ver uma informação de propriedade ou jogador? (ou 'sair' para encerrar) ");
