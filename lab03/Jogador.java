@@ -20,6 +20,7 @@ public class Jogador {
         this.dinheiro = 1500;
         this.id = ++n_jogadores;
         this.peca = peca;
+        cartas = new ArrayList<>();
     }
 
     public String getNome(){
@@ -89,9 +90,17 @@ public class Jogador {
         return true;
     }
 
+    private String imprimeCartas(){
+        String impressao = "";
+        for(int i=0; i < this.cartas.size(); i++){
+            impressao += this.cartas.get(i).getId() + "; ";
+        }
+        return impressao;
+    }
+
     // toString para printar os dados do jogador
     public String toString(){
         return "Nome: " + nome + "\nCpf: " + cpf + "\nFoto: " + foto + "\nEmail: " + email + "\nId: " + id + 
-        "\nDinheiro: " + dinheiro + "\n";
+        "\nDinheiro: " + dinheiro + "\nPeça - Cor: " + peca.getCor() + ", Posicao: " + peca.getPosicao() + "\nCartas(id): " + imprimeCartas() + "\n";
     }
 }

@@ -32,4 +32,8 @@ public abstract class Carta {
     public Jogador getDono(){
         return dono;
     }
+
+    public String toString(){
+        return "Id: " + id + "\nDescrição: " + descricao + "\nDono(id): " + dono.getId();
+    }
 }

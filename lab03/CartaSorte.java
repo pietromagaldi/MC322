@@ -19,12 +19,6 @@ public class CartaSorte extends Carta{
         this.restricao = restricao;
     }
 
-    public String toString(){
-        return "Id: " + getId() + "\nDescrição: " + getDescricao() + "\nDono: " + getDono() + "\nMovimento: " + movimento 
-        + "\nEfeito: " + efeito + "\nValor: " + valor + "\nAção: " + acao + "\nTempo: " + tempo + "\nRestrição: "
-        + restricao + "\n";
-    }
-
     public void setMovimento(int movimento){
         this.movimento = movimento;
     }

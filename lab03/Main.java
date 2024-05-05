@@ -1,6 +1,7 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
-        // fazer menu e arrumar/fazer as tostring
         Jogador j1, j2;
         Peca peca1, peca2;
         CartaSorte cartasorte;
@@ -16,6 +17,7 @@ public class Main {
         j2 = new Jogador("João", "11111111111", "25", "j259099@gmail.com", peca2);
 
         cartasorte = new CartaSorte(25, "Mova 5 casas para frente.", j1, 5, 1, 0, "Andar 5 casas.", 0, "nenhuma");
+        j1.adicionaCarta(cartasorte);
 
         terr = new Terreno(2, "Terreno na Avenida 1", "Avenida Romeu Tórtima", j1, 200, 100, 50, 100);
 
@@ -31,25 +33,9 @@ public class Main {
         tab.addPropriedade(sp);
         tab.addPropriedade(estacao);
 
-        System.out.println(j1.toString());
-        System.out.println(j2.toString());
-        System.out.println(peca1.toString());
-        System.out.println(peca2.toString());
-        System.out.println(cartasorte.toString());
-        
-        System.out.println("O aluguel do Serviço público de nome " + sp.getNome() + ", quando se tira 3 no dado, é " + sp.calcularAluguel(3));
-
-        System.out.println("O aluguel da estação de id " + estacao.getId() + " é " + estacao.calcularAluguel());
-
         terr.comprarCasa();
 
-        System.out.println("O aluguel do terreno de nome " + terr.getNome() + " é " + terr.calcularAluguel());
-        System.out.println("O dinheiro de " + terr.getDono().getNome() + " após comprar uma casa no terreno "
-        + terr.getNome() + " é de " + terr.getDono().getDinheiro() + "\n");
-
-        System.out.println(j1.toString());
-
-        if (Funcoes.validarCPF(j1.getCpf())){
+        /*if (Funcoes.validarCPF(j1.getCpf())){
             System.out.println("Cpf do Jogador 1 é válido!");
         }
         else{
@@ -72,6 +58,41 @@ public class Main {
         }
         else{
             System.out.println("Email do Jogador 2 é inválido!");
+        }*/
+
+        Scanner scanner = new Scanner(System.in);
+        while (true){
+            System.out.println("Deseja ver uma informação de propriedade ou jogador? (ou 'sair' para encerrar) ");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("sair")){
+                break;
+            }
+            
+            else if (input.equalsIgnoreCase("propriedade")){
+                System.out.println("Qual o nome da propriedade que deseja ver? ");
+                input = scanner.nextLine();
+                for (int i=0; i < tab.getPropriedades().size(); i++){
+                    if (tab.getPropriedades().get(i).getNome().equalsIgnoreCase(input)){
+                        System.out.println(tab.getPropriedades().get(i).toString());
+                    }
+                }
+            }
+
+            else if (input.equalsIgnoreCase("jogador")){
+                System.out.println("Qual o nome do jogador que deseja ver? ");
+                input = scanner.nextLine();
+                for (int i=0; i < tab.getJogador().size(); i++){
+                    if (tab.getJogador().get(i).getNome().equalsIgnoreCase(input)){
+                        System.out.println(tab.getJogador().get(i).toString());
+                    }
+                }
+            }
+
+            else {
+                System.out.println("Digite uma opção válida.");
+            }
         }
+        scanner.close();
     }
 }

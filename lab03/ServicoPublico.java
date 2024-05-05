@@ -5,6 +5,11 @@ public class ServicoPublico extends Propriedade{ // herda da classe mãe Proprie
     }
 
     // Sobrecarrega o método sa classe mãe (mesmo nome, mas esse método requer parâmetros)
+
+    public float calcularAluguel(){
+        return aluguel;
+    }
+
     public float calcularAluguel(int dados) {
         return aluguel*dados;
     }

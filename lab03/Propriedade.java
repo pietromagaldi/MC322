@@ -23,9 +23,7 @@ public abstract class Propriedade extends Carta{
         return aluguel;
     }
     
-    public float calcularAluguel(){
-        return aluguel;
-    }
+    public abstract float calcularAluguel();
 
     public void setNome(String nome){
         this.nome = nome;
