@@ -1,0 +1,39 @@
+public abstract class Carta {
+    protected int id;
+    protected String descricao;
+    protected Jogador dono;
+
+    public Carta(int id, String descricao){
+        this.id = id;
+        this.descricao = descricao;
+        this.dono = null;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public void setDescricao(String descricao){
+        this.descricao = descricao;
+    }
+
+    public void setDono(Jogador jogador){
+        this.dono = jogador;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public String getDescricao(){
+        return descricao;
+    }
+
+    public Jogador getDono(){
+        return dono;
+    }
+
+    public String toString(){
+        return "Id: " + id + "\nDescrição: " + descricao + "\nDono(id): " + dono.getId();
+    }
+}
